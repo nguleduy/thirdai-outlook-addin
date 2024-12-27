@@ -1,0 +1,64 @@
+<!-- Copyright (c) Microsoft Corporation. All rights reserved. Licensed under the MIT License. -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <!-- Office JavaScript API -->
+    <link rel="stylesheet" type="text/css" href="taskpane.css"/>
+    <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
+</head>
+
+<body>
+    <h1>Plugin Area</h1>
+    <div style="display: flex; flex-direction: column; align-items: flex-end;">
+        <textarea id="input-prompt" placeholder="Enter your prompt here..." rows="5"></textarea>
+        <button id="button-prompt" class="primary" disabled>Submit</button>
+    </div>
+
+    <div id="response-container" hidden>
+        <div class="response-header">
+            <span>Response</span>
+            <button id="copy-button">
+                <img src="./assets/copy-icon.png" alt="Copy" class="copy-icon"> Copy
+            </button>
+        </div>
+        <div id="response" hidden></div>
+    </div>
+
+    <div id="loading" class="text" hidden><div class="blink">...</div></div>
+    <div id="error" class="text" hidden>Error occurred</div>
+
+    <script src="./js/index.js" type="module"></script>
+</body>
+
+<!-- <script>
+
+    Office.onReady((info) => {
+        if (info.host === Office.HostType.Outlook) {
+            document.getElementById("helloButton").onclick = sayHello;
+        }
+    });
+
+    /**
+     * Writes 'Hello world!' to a new message body.
+     */
+    function sayHello() {
+        Office.context.mailbox.item.body.setAsync(
+            "Hello world!",
+            {
+                coercionType: "html", // Write text as HTML
+            },
+
+            // Callback method to check that setAsync succeeded
+            function (asyncResult) {
+                if (asyncResult.status ==
+                    Office.AsyncResultStatus.Failed) {
+                    write(asyncResult.error.message);
+                }
+            }
+        );
+    }
+
+</script> -->
+
+</html>

@@ -1,0 +1,150 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: #1f1f1f;
+  background-color: #F5FBFF;
+  font-size: 16px;
+  padding: 8px;
+
+}
+
+h1{
+  color: #0098d7;
+}
+
+input,
+button,
+textarea,
+select {
+  font-family: inherit;
+  font-size: inherit;
+}
+
+button {
+  color: #1A1A1A;
+  border-radius: 8px;
+  border: none;
+  min-width: 100px;
+  padding: 8px;
+  margin: 16px 0;
+  cursor: pointer;
+}
+
+button.primary {
+  background: #D4EAFB;
+  color: #1A1A1A;
+}
+
+button.secondary {
+  background: #ccc;
+  color: black;
+}
+
+button[disabled] {
+  background: #ddd;
+  color: #aaa;
+}
+
+input[type="range"] {
+  margin-top: 16px;
+  accent-color: black;
+}
+
+textarea {
+  --padding: 32px;
+  width: calc(100% - var(--padding));
+  max-width: calc(100% - var(--padding));
+  background-color: white;
+  padding: 16px;
+  border-radius: 16px;
+  box-shadow: rgba(0, 0, 0, 0) 0 1px 4px, rgb(142, 197, 238) 0 0 0 2px;
+  border: none;
+  outline: none;
+}
+
+.blink {
+  display: inline-block;
+  font-size: 16px;
+  animation: blink-animation 1.5s steps(3, start) infinite;
+}
+
+@keyframes blink-animation {
+  0% { content: "."; }
+  33% { content: ".."; }
+  66% { content: "..."; }
+  100% { content: ""; }
+}
+
+@keyframes blink {
+  25% {
+    opacity: 0.5;
+  }
+  50% {
+    opacity: 0;
+  }
+  75% {
+    opacity: 0.5;
+  }
+}
+
+[hidden] {
+  display: none;
+}
+
+#response-container {
+  position: relative;
+  width: 100%;
+  margin-top: 16px;
+  border-radius: 16px;
+  background-color: #C7E7FF;
+  box-shadow: rgba(0, 0, 0, 0) 0 1px 4px, rgb(142, 197, 238) 0 0 0 2px;
+  border: none;
+  font-size: 14px;
+  overflow: hidden;
+}
+
+.response-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 16px;
+  border-bottom: 1px solid #ccc;
+  font-weight: bold;
+  color: #333;
+}
+
+#response {
+  padding: 16px;
+  white-space: pre-wrap;
+  color: #333;
+  font-size: 16px;
+}
+
+#copy-button {
+  color: black;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background-color: #f6f8fa;
+  border: 2px solid #75B6E8;
+  border-radius: 8px;
+  padding: 4px 8px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+#copy-button:hover {
+  background-color: #eaecef;
+}
+
+.copy-icon {
+  width: 16px;
+  height: 16px;
+}
+
+#loading {
+  background-color: white;
+  padding: 16px;
+  outline: none;
+  border-radius: 16px;
+}
